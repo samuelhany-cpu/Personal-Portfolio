@@ -13,16 +13,16 @@ const App = () => {
   useEffect(() => {
     // Smooth scrolling for the entire document
     document.documentElement.style.scrollBehavior = 'smooth';
-    
+
     // Add scroll listener for animations and effects
     const handleScroll = () => {
       // You can add global scroll effects here if needed
       const scrollTop = window.pageYOffset;
       const windowHeight = window.innerHeight;
-      
+
       // Example: Parallax effect for background elements
       const parallaxElements = document.querySelectorAll('.parallax');
-      parallaxElements.forEach((element) => {
+      parallaxElements.forEach(element => {
         const speed = element.dataset.speed || 0.5;
         const yPos = -(scrollTop * speed);
         element.style.transform = `translateY(${yPos}px)`;
@@ -46,11 +46,11 @@ const App = () => {
     // Intersection Observer for fade-in animations
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
         }
@@ -59,7 +59,7 @@ const App = () => {
 
     // Observe all sections for animations
     const sections = document.querySelectorAll('section');
-    sections.forEach((section) => {
+    sections.forEach(section => {
       observer.observe(section);
     });
 
@@ -71,7 +71,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-primary-900 text-gray-100 overflow-x-hidden">
+    <div className='min-h-screen bg-primary-900 text-gray-100 overflow-x-hidden'>
       {/* Global Loading Overlay - you can add this if needed */}
       {/* <div id="loading-overlay" className="fixed inset-0 bg-primary-900 z-50 flex items-center justify-center">
         <div className="text-accent-500 text-2xl font-mono">Loading...</div>
@@ -81,7 +81,7 @@ const App = () => {
       <Header />
 
       {/* Main Content */}
-      <main className="relative">
+      <main className='relative'>
         {/* Hero Section */}
         <Hero />
 
@@ -124,11 +124,11 @@ const App = () => {
         }
 
         ::-webkit-scrollbar-track {
-          background: #0A192F;
+          background: #0a192f;
         }
 
         ::-webkit-scrollbar-thumb {
-          background: #64FFDA;
+          background: #64ffda;
           border-radius: 4px;
         }
 
@@ -138,18 +138,18 @@ const App = () => {
 
         /* Selection color */
         ::selection {
-          background: #64FFDA;
-          color: #0A192F;
+          background: #64ffda;
+          color: #0a192f;
         }
 
         ::-moz-selection {
-          background: #64FFDA;
-          color: #0A192F;
+          background: #64ffda;
+          color: #0a192f;
         }
 
         /* Focus styles for accessibility */
         *:focus {
-          outline: 2px solid #64FFDA;
+          outline: 2px solid #64ffda;
           outline-offset: 2px;
         }
 
@@ -166,7 +166,7 @@ const App = () => {
           ::-webkit-scrollbar {
             display: none;
           }
-          
+
           body {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -183,7 +183,8 @@ const App = () => {
 
         /* Loading animation */
         @keyframes pulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 1;
           }
           50% {
@@ -197,7 +198,7 @@ const App = () => {
 
         /* Gradient text effect */
         .gradient-text {
-          background: linear-gradient(135deg, #64FFDA 0%, #4fd1c7 100%);
+          background: linear-gradient(135deg, #64ffda 0%, #4fd1c7 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;

@@ -28,14 +28,14 @@ export async function POST(request) {
     // - AWS SES
     // - Resend
     // - EmailJS
-    
+
     // For demonstration, we'll log the data and return success
     console.log('Contact form submission:', {
       name,
       email,
       subject: subject || 'New Contact Form Submission',
       message,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
 
     // Simulate email sending delay
@@ -71,19 +71,18 @@ export async function POST(request) {
     */
 
     return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Thank you for your message! I\'ll get back to you soon.' 
+      {
+        success: true,
+        message: "Thank you for your message! I'll get back to you soon.",
       },
       { status: 200 }
     );
-
   } catch (error) {
     console.error('Contact form error:', error);
-    
+
     return NextResponse.json(
-      { 
-        error: 'Failed to send message. Please try again later.' 
+      {
+        error: 'Failed to send message. Please try again later.',
       },
       { status: 500 }
     );
@@ -92,8 +91,5 @@ export async function POST(request) {
 
 // Handle other HTTP methods
 export async function GET() {
-  return NextResponse.json(
-    { error: 'Method not allowed' },
-    { status: 405 }
-  );
+  return NextResponse.json({ error: 'Method not allowed' }, { status: 405 });
 }

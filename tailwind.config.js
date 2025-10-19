@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -59,14 +59,14 @@ module.exports = {
         // Sans-serif fonts (Inter/Montserrat)
         sans: [
           'Inter',
-          'Montserrat', 
-          'ui-sans-serif', 
-          'system-ui', 
+          'Montserrat',
+          'ui-sans-serif',
+          'system-ui',
           'sans-serif',
           '"Apple Color Emoji"',
           '"Segoe UI Emoji"',
           '"Segoe UI Symbol"',
-          '"Noto Color Emoji"'
+          '"Noto Color Emoji"',
         ],
         // Primary heading font
         heading: [
@@ -74,15 +74,10 @@ module.exports = {
           'Inter',
           'ui-sans-serif',
           'system-ui',
-          'sans-serif'
+          'sans-serif',
         ],
         // Body text font
-        body: [
-          'Inter',
-          'ui-sans-serif',
-          'system-ui',
-          'sans-serif'
-        ],
+        body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         // Monospace font for code
         mono: [
           'JetBrains Mono',
@@ -91,7 +86,7 @@ module.exports = {
           'Consolas',
           '"Liberation Mono"',
           '"Courier New"',
-          'monospace'
+          'monospace',
         ],
         // Code-specific font
         code: [
@@ -104,10 +99,10 @@ module.exports = {
           'Consolas',
           '"Liberation Mono"',
           '"Courier New"',
-          'monospace'
+          'monospace',
         ],
       },
     },
   },
   plugins: [],
-}
+};

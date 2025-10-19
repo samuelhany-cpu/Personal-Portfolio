@@ -7,48 +7,50 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-const {onDocumentCreated} = require("firebase-functions/v2/firestore");
-const {onCall} = require("firebase-functions/v2/https");
-const functions = require("firebase-functions");
-const {initializeApp} = require("firebase-admin/app");
-const {getFirestore} = require("firebase-admin/firestore");
-const nodemailer = require("nodemailer");
+const { onDocumentCreated } = require('firebase-functions/v2/firestore');
+const { onCall } = require('firebase-functions/v2/https');
+const functions = require('firebase-functions');
+const { initializeApp } = require('firebase-admin/app');
+const { getFirestore } = require('firebase-admin/firestore');
+const nodemailer = require('nodemailer');
 
 // Initialize Firebase Admin
 initializeApp();
 
 /**
  * Cloud Function: Send Email on Contact Form Submission
- * 
+ *
  * This function triggers when a new document is created in the 'contactSubmissions' collection
  * It sends an email notification with the contact details to your email address
  */
-exports.sendContactEmail = onDocumentCreated("contactSubmissions/{documentId}", async (event) => {
-  // Get the contact data from the newly created document
-  const contactData = event.data.data();
-  
-  if (!contactData) {
-    console.error("No contact data found in document");
-    return;
-  }
+exports.sendContactEmail = onDocumentCreated(
+  'contactSubmissions/{documentId}',
+  async event => {
+    // Get the contact data from the newly created document
+    const contactData = event.data.data();
 
-  console.log("New contact submission received:", contactData);
+    if (!contactData) {
+      console.error('No contact data found in document');
+      return;
+    }
 
-  // Email configuration
-  const transporter = nodemailer.createTransporter({
-    service: 'gmail', // You can change this to your preferred email service
-    auth: {
-      user: functions.config().gmail.user, // Your email address (set in Firebase Functions config)
-      pass: functions.config().gmail.password, // Your app password (set in Firebase Functions config)
-    },
-  });
+    console.log('New contact submission received:', contactData);
 
-  // Email content
-  const mailOptions = {
-    from: functions.config().gmail.user,
-    to: functions.config().gmail.user, // Send to yourself
-    subject: `🚀 New Portfolio Contact: ${contactData.name}`,
-    html: `
+    // Email configuration
+    const transporter = nodemailer.createTransporter({
+      service: 'gmail', // You can change this to your preferred email service
+      auth: {
+        user: functions.config().gmail.user, // Your email address (set in Firebase Functions config)
+        pass: functions.config().gmail.password, // Your app password (set in Firebase Functions config)
+      },
+    });
+
+    // Email content
+    const mailOptions = {
+      from: functions.config().gmail.user,
+      to: functions.config().gmail.user, // Send to yourself
+      subject: `🚀 New Portfolio Contact: ${contactData.name}`,
+      html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
         <h2 style="color: #0A192F; text-align: center; margin-bottom: 30px;">
           🚀 New Portfolio Contact Submission
@@ -104,8 +106,8 @@ exports.sendContactEmail = onDocumentCreated("contactSubmissions/{documentId}", 
         </div>
       </div>
     `,
-    // Plain text version for email clients that don't support HTML
-    text: `
+      // Plain text version for email clients that don't support HTML
+      text: `
       New Portfolio Contact Submission
       
       Name: ${contactData.name}
@@ -118,41 +120,48 @@ exports.sendContactEmail = onDocumentCreated("contactSubmissions/{documentId}", 
       Submitted: ${contactData.timestamp ? new Date(contactData.timestamp.toDate()).toLocaleString() : 'Just now'}
       Source: Portfolio Website Contact Form
     `,
-  };
+    };
 
-  try {
-    // Send the email
-    await transporter.sendMail(mailOptions);
-    console.log("✅ Contact notification email sent successfully");
-    
-    // Optional: Update the document to mark it as "email sent"
-    const db = getFirestore();
-    await db.collection('contactSubmissions').doc(event.params.documentId).update({
-      emailSent: true,
-      emailSentAt: new Date(),
-    });
-    
-    return {success: true, message: "Email sent successfully"};
-  } catch (error) {
-    console.error("❌ Error sending contact email:", error);
-    
-    // Update document to mark email failed
-    const db = getFirestore();
-    await db.collection('contactSubmissions').doc(event.params.documentId).update({
-      emailSent: false,
-      emailError: error.message,
-      emailAttemptedAt: new Date(),
-    });
-    
-    throw new Error(`Failed to send email: ${error.message}`);
+    try {
+      // Send the email
+      await transporter.sendMail(mailOptions);
+      console.log('✅ Contact notification email sent successfully');
+
+      // Optional: Update the document to mark it as "email sent"
+      const db = getFirestore();
+      await db
+        .collection('contactSubmissions')
+        .doc(event.params.documentId)
+        .update({
+          emailSent: true,
+          emailSentAt: new Date(),
+        });
+
+      return { success: true, message: 'Email sent successfully' };
+    } catch (error) {
+      console.error('❌ Error sending contact email:', error);
+
+      // Update document to mark email failed
+      const db = getFirestore();
+      await db
+        .collection('contactSubmissions')
+        .doc(event.params.documentId)
+        .update({
+          emailSent: false,
+          emailError: error.message,
+          emailAttemptedAt: new Date(),
+        });
+
+      throw new Error(`Failed to send email: ${error.message}`);
+    }
   }
-});
+);
 
 /**
  * Optional: Cloud Function for Testing Email Configuration
  * You can call this function to test if your email setup is working
  */
-exports.testEmail = onCall(async (request) => {
+exports.testEmail = onCall(async request => {
   const transporter = nodemailer.createTransporter({
     service: 'gmail',
     auth: {
@@ -164,7 +173,7 @@ exports.testEmail = onCall(async (request) => {
   const testMailOptions = {
     from: functions.config().gmail.user,
     to: functions.config().gmail.user,
-    subject: "🧪 Portfolio Email Test",
+    subject: '🧪 Portfolio Email Test',
     html: `
       <h2>Email Configuration Test</h2>
       <p>If you're reading this, your email setup is working correctly! 🎉</p>
@@ -174,9 +183,9 @@ exports.testEmail = onCall(async (request) => {
 
   try {
     await transporter.sendMail(testMailOptions);
-    return {success: true, message: "Test email sent successfully!"};
+    return { success: true, message: 'Test email sent successfully!' };
   } catch (error) {
-    console.error("Test email failed:", error);
+    console.error('Test email failed:', error);
     throw new Error(`Test email failed: ${error.message}`);
   }
 });
