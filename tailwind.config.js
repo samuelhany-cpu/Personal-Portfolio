@@ -8,19 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Navy-based primary colors
+        // Black-based primary colors
         primary: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#829ab1',
-          500: '#627d98',
-          600: '#486581',
-          700: '#334e68',
-          800: '#243b53',
-          900: '#0A192F', // Main navy color
-          950: '#071218',
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#000000', // Pure black
+          950: '#000000',
         },
         // Teal/Lime accent colors
         accent: {
@@ -51,7 +51,7 @@ module.exports = {
           950: '#020617',
         },
         // Additional semantic colors
-        navy: '#0A192F',
+        black: '#000000',
         teal: '#64FFDA',
         lime: '#64FFDA',
       },
