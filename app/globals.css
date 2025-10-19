@@ -30,8 +30,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000 !important;
-  color: #e2e8f0 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
@@ -48,14 +48,15 @@ body {
 
 .text-gray-100 {
   color: #ffffff !important;
+  font-weight: 500 !important;
 }
 
 .text-gray-300 {
-  color: #e2e8f0 !important;
+  color: #f8fafc !important;
 }
 
 .text-gray-400 {
-  color: #cbd5e1 !important;
+  color: #e2e8f0 !important;
 }
 
 /* Fix hover text visibility */
@@ -67,6 +68,35 @@ body {
   color: #000000 !important;
 }
 
+/* Project specific overrides */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+p {
+  color: #f8fafc !important;
+}
+
+/* Enhanced contrast for project cards */
+.project-card {
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+.project-card h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.project-card p {
+  color: #ffffff !important;
+}
+
+.project-card .tech-stack {
+  color: #ffffff !important;
+}
+
 /* Navigation Styles */
 nav {
   background-color: rgba(0, 0, 0, 0.95) !important;
@@ -75,8 +105,8 @@ nav {
 
 /* Section Styles */
 section {
-  background-color: #000000 !important;
-  color: #e2e8f0 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 /* Button Styles */
@@ -112,8 +142,8 @@ a:hover {
 
 /* Card Styles */
 .card {
-  background-color: rgba(30, 30, 30, 0.95) !important;
-  border: 1px solid rgba(100, 255, 218, 0.2) !important;
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
   border-radius: 8px !important;
   padding: 24px !important;
   transition: all 0.3s ease !important;
@@ -121,22 +151,38 @@ a:hover {
 
 .card:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.15) !important;
-  background-color: rgba(40, 40, 40, 0.95) !important;
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.5) !important;
+  background: #000000 !important;
+  border-color: #64ffda !important;
 }
 
 /* Project card text visibility */
 .card h3,
 .card .text-gray-100 {
   color: #ffffff !important;
+  font-weight: 700 !important;
 }
 
 .card .text-gray-300 {
-  color: #e2e8f0 !important;
+  color: #ffffff !important;
 }
 
 .card .text-gray-400 {
-  color: #cbd5e1 !important;
+  color: #ffffff !important;
+}
+
+/* Category badges */
+.category-badge {
+  background: #000000 !important;
+  color: #64ffda !important;
+  border: 2px solid #64ffda !important;
+}
+
+/* Tech stack tags */
+.tech-tag {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
 }
 
 /* Text Styles */

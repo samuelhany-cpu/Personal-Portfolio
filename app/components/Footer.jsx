@@ -81,7 +81,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className='bg-primary-950 border-t border-primary-800/50 relative'>
+    <footer className='bg-black border-t-2 border-white relative'>
       {/* Background Pattern */}
       <div className='absolute inset-0 opacity-5'>
         <div
@@ -100,7 +100,7 @@ const Footer = () => {
               <h3 className='text-xl font-heading font-bold text-accent-500 mb-2'>
                 &lt;Developer /&gt;
               </h3>
-              <p className='text-gray-400 leading-relaxed max-w-md'>
+              <p className='text-white leading-relaxed max-w-md'>
                 Full-Stack Developer passionate about creating exceptional
                 digital experiences with modern technologies and clean, scalable
                 code.
@@ -117,7 +117,7 @@ const Footer = () => {
                   rel={
                     social.href.startsWith('http') ? 'noopener noreferrer' : ''
                   }
-                  className='p-3 bg-primary-800/30 border border-primary-700/30 rounded-lg text-gray-400 hover:text-accent-500 hover:border-accent-500/50 hover:bg-primary-800/50 transition-all duration-300 transform hover:scale-110'
+                  className='p-3 bg-black border-2 border-white rounded-lg text-white hover:text-accent-500 hover:border-accent-500 hover:bg-black transition-all duration-300 transform hover:scale-110'
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -128,7 +128,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className='text-lg font-heading font-semibold text-gray-100 mb-4'>
+            <h4 className='text-lg font-heading font-semibold text-white mb-4'>
               Quick Links
             </h4>
             <ul className='space-y-2'>
@@ -137,7 +137,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={e => handleNavClick(e, link.href)}
-                    className='text-gray-400 hover:text-accent-500 transition-colors duration-300 text-sm'
+                    className='text-white hover:text-accent-500 transition-colors duration-300 text-sm'
                   >
                     {link.name}
                   </a>
@@ -148,7 +148,7 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h4 className='text-lg font-heading font-semibold text-gray-100 mb-4'>
+            <h4 className='text-lg font-heading font-semibold text-white mb-4'>
               Resources
             </h4>
             <ul className='space-y-2'>
@@ -157,7 +157,7 @@ const Footer = () => {
                   href='/resume.pdf'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-400 hover:text-accent-500 transition-colors duration-300 text-sm'
+                  className='text-white hover:text-accent-500 transition-colors duration-300 text-sm'
                 >
                   Resume
                 </a>
@@ -167,7 +167,7 @@ const Footer = () => {
                   href='https://github.com/yourusername'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-400 hover:text-accent-500 transition-colors duration-300 text-sm'
+                  className='text-white hover:text-accent-500 transition-colors duration-300 text-sm'
                 >
                   GitHub
                 </a>
@@ -177,7 +177,7 @@ const Footer = () => {
                   href='https://linkedin.com/in/yourusername'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='text-gray-400 hover:text-accent-500 transition-colors duration-300 text-sm'
+                  className='text-white hover:text-accent-500 transition-colors duration-300 text-sm'
                 >
                   LinkedIn
                 </a>
@@ -187,13 +187,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className='pt-8 border-t border-primary-800/50'>
+        <div className='pt-8 border-t-2 border-white'>
           <div className='flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0'>
-            <div className='flex items-center space-x-4 text-sm text-gray-400'>
+            <div className='flex items-center space-x-4 text-sm text-white'>
               <span>© {currentYear} John Developer. All rights reserved.</span>
             </div>
 
-            <div className='flex items-center space-x-6 text-sm text-gray-400'>
+            <div className='flex items-center space-x-6 text-sm text-white'>
               <span className='flex items-center'>
                 Built with
                 <span className='text-accent-500 mx-1'>❤️</span>

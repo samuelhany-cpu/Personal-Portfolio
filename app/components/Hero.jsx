@@ -57,7 +57,7 @@ const Hero = () => {
   return (
     <section
       id='hero'
-      className='min-h-screen flex items-center justify-center bg-primary-900 relative overflow-hidden'
+      className='min-h-screen flex items-center justify-center bg-black relative overflow-hidden'
     >
       {/* Background Pattern */}
       <div className='absolute inset-0 opacity-5'>
@@ -77,18 +77,18 @@ const Hero = () => {
         </p>
 
         {/* Main Heading */}
-        <h1 className='text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-gray-100 mb-4 leading-tight'>
+        <h1 className='text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-4 leading-tight'>
           Samuel <span className='text-accent-500'>Ehab</span>
         </h1>
 
         {/* Animated Subtitle */}
-        <h2 className='text-3xl md:text-5xl lg:text-6xl font-heading font-semibold text-gray-400 mb-8 h-16 md:h-20'>
+        <h2 className='text-3xl md:text-5xl lg:text-6xl font-heading font-semibold text-white mb-8 h-16 md:h-20'>
           I'm a <span className='text-accent-500'>{displayText}</span>
           <span className='animate-pulse text-accent-500'>|</span>
         </h2>
 
         {/* Description */}
-        <p className='text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed'>
+        <p className='text-lg md:text-xl text-white max-w-3xl mx-auto mb-12 leading-relaxed'>
           I specialize in building exceptional digital experiences with modern
           technologies. Currently focused on creating scalable web applications
           with <span className='text-accent-500 font-semibold'>React</span>,{' '}
@@ -148,8 +148,8 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
-          <div className='w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center'>
-            <div className='w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse'></div>
+          <div className='w-6 h-10 border-2 border-white rounded-full flex justify-center'>
+            <div className='w-1 h-3 bg-white rounded-full mt-2 animate-pulse'></div>
           </div>
         </div>
       </div>

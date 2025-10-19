@@ -5,23 +5,7 @@ import { useState, useEffect } from 'react';
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) observer.observe(aboutSection);
-
-    return () => observer.disconnect();
-  }, []);
+  
 
   const highlights = [
     {
@@ -103,7 +87,7 @@ const About = () => {
   ];
 
   return (
-    <section id='about' className='py-20 bg-primary-900 relative'>
+    <section id='about' className='py-20 bg-black relative'>
       {/* Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-1/3 -left-48 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl'></div>
@@ -128,7 +112,7 @@ const About = () => {
                 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}
               `}
             >
-              <div className='space-y-4 text-gray-300 leading-relaxed'>
+              <div className='space-y-4 text-white leading-relaxed'>
                 <p className='text-lg'>
                   Hello! I'm a passionate{' '}
                   <span className='text-accent-500 font-semibold'>
@@ -163,23 +147,23 @@ const About = () => {
               <div className='grid grid-cols-2 gap-4 pt-4'>
                 <div className='space-y-2'>
                   <p className='text-accent-500 font-mono text-sm'>Location</p>
-                  <p className='text-gray-300'>Remote / Global</p>
+                  <p className='text-white'>Remote / Global</p>
                 </div>
                 <div className='space-y-2'>
                   <p className='text-accent-500 font-mono text-sm'>
                     Experience
                   </p>
-                  <p className='text-gray-300'>3+ Years</p>
+                  <p className='text-white'>3+ Years</p>
                 </div>
                 <div className='space-y-2'>
                   <p className='text-accent-500 font-mono text-sm'>Focus</p>
-                  <p className='text-gray-300'>Full-Stack Development</p>
+                  <p className='text-white'>Full-Stack Development</p>
                 </div>
                 <div className='space-y-2'>
                   <p className='text-accent-500 font-mono text-sm'>
                     Availability
                   </p>
-                  <p className='text-gray-300'>Open to Projects</p>
+                  <p className='text-white'>Open to Projects</p>
                 </div>
               </div>
             </div>
@@ -194,7 +178,7 @@ const About = () => {
               {/* Profile Image Placeholder */}
               <div className='relative w-80 h-80 mx-auto'>
                 <div className='absolute inset-0 bg-gradient-to-br from-accent-500/20 to-primary-800 rounded-lg transform rotate-6'></div>
-                <div className='relative bg-primary-800 rounded-lg p-8 flex items-center justify-center border border-primary-700/50'>
+                <div className='relative bg-black rounded-lg p-8 flex items-center justify-center border-2 border-white'>
                   <div className='text-accent-500/60 text-6xl'>
                     <svg
                       fill='none'
@@ -227,9 +211,9 @@ const About = () => {
                 <div
                   key={highlight.title}
                   className={`
-                    text-center p-6 rounded-lg bg-primary-800/30 border border-primary-700/30 
-                    transition-all duration-700 transform hover:bg-primary-800/50 hover:border-accent-500/50 
-                    hover:scale-105 hover:shadow-lg hover:shadow-accent-500/10
+                    text-center p-6 rounded-lg bg-black border-2 border-white 
+                    transition-all duration-700 transform hover:bg-black hover:border-accent-500 
+                    hover:scale-105 hover:shadow-lg hover:shadow-accent-500/50
                     ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                   `}
                   style={{ transitionDelay: `${600 + index * 150}ms` }}
@@ -237,10 +221,10 @@ const About = () => {
                   <div className='text-accent-500 mb-4 flex justify-center'>
                     {highlight.icon}
                   </div>
-                  <h4 className='text-lg font-heading font-semibold text-gray-100 mb-2'>
+                  <h4 className='text-lg font-heading font-semibold text-white mb-2'>
                     {highlight.title}
                   </h4>
-                  <p className='text-gray-400 text-sm'>
+                  <p className='text-white text-sm'>
                     {highlight.description}
                   </p>
                 </div>

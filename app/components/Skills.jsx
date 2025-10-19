@@ -34,15 +34,15 @@ const Skills = () => {
   const SkillItem = ({ skill, index, isVisible }) => (
     <div
       className={`
-        flex items-center space-x-3 p-3 rounded-lg bg-primary-800/50 border border-primary-700/50 
-        transition-all duration-500 transform hover:bg-primary-800 hover:border-accent-500/50 
-        hover:scale-105 hover:shadow-lg hover:shadow-accent-500/10
+        flex items-center space-x-3 p-3 rounded-lg bg-black border-2 border-white 
+        transition-all duration-500 transform hover:bg-black hover:border-accent-500 
+        hover:scale-105 hover:shadow-lg hover:shadow-accent-500/50
         ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
       `}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className='w-2 h-2 bg-accent-500 rounded-full flex-shrink-0'></div>
-      <span className='text-gray-300 font-medium text-sm md:text-base'>
+      <span className='text-white font-medium text-sm md:text-base'>
         {skill}
       </span>
     </div>
@@ -84,7 +84,7 @@ const Skills = () => {
   };
 
   return (
-    <section id='skills' className='py-20 bg-primary-900 relative'>
+    <section id='skills' className='py-20 bg-black relative'>
       {/* Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-1/4 -left-64 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl'></div>
@@ -94,10 +94,10 @@ const Skills = () => {
       <div className='container mx-auto px-6 relative z-10'>
         {/* Section Header */}
         <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-100 mb-4'>
+          <h2 className='text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4'>
             Technical <span className='text-accent-500'>Skills</span>
           </h2>
-          <p className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'>
+          <p className='text-lg md:text-xl text-white max-w-3xl mx-auto'>
             A comprehensive toolkit of modern technologies and frameworks I use
             to build scalable, efficient, and user-friendly applications.
           </p>
@@ -120,9 +120,9 @@ const Skills = () => {
 
         {/* Additional Info */}
         <div className='mt-20 text-center'>
-          <div className='inline-flex items-center space-x-4 px-6 py-3 bg-primary-800/50 rounded-lg border border-primary-700/50'>
+          <div className='inline-flex items-center space-x-4 px-6 py-3 bg-black rounded-lg border-2 border-white'>
             <div className='w-3 h-3 bg-accent-500 rounded-full animate-pulse'></div>
-            <span className='text-gray-300 font-mono text-sm'>
+            <span className='text-white font-mono text-sm'>
               Always learning and exploring new technologies
             </span>
           </div>
@@ -138,12 +138,12 @@ const Skills = () => {
           ].map((stat, index) => (
             <div
               key={stat.label}
-              className='text-center p-4 rounded-lg bg-primary-800/30 border border-primary-700/30'
+              className='text-center p-4 rounded-lg bg-black border-2 border-white'
             >
               <div className='text-2xl md:text-3xl font-bold text-accent-500 mb-2'>
                 {stat.number}
               </div>
-              <div className='text-gray-400 text-sm md:text-base font-medium'>
+              <div className='text-white text-sm md:text-base font-medium'>
                 {stat.label}
               </div>
             </div>

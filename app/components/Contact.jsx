@@ -113,7 +113,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id='contact' className='py-20 bg-primary-900 relative'>
+    <section id='contact' className='py-20 bg-black relative'>
       {/* Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute top-1/4 left-1/4 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl'></div>
@@ -123,10 +123,10 @@ const Contact = () => {
       <div className='container mx-auto px-6 relative z-10'>
         {/* Section Header */}
         <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-gray-100 mb-4'>
+          <h2 className='text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white mb-4'>
             Get In <span className='text-accent-500'>Touch</span>
           </h2>
-          <p className='text-lg md:text-xl text-gray-400 max-w-3xl mx-auto'>
+          <p className='text-lg md:text-xl text-white max-w-3xl mx-auto'>
             Have a project in mind or want to collaborate? I'd love to hear from
             you. Let's create something amazing together.
           </p>
@@ -143,10 +143,10 @@ const Contact = () => {
               `}
             >
               <div>
-                <h3 className='text-2xl font-heading font-semibold text-gray-100 mb-4'>
+                <h3 className='text-2xl font-heading font-semibold text-white mb-4'>
                   Let's start a conversation
                 </h3>
-                <p className='text-gray-300 leading-relaxed mb-8'>
+                <p className='text-white leading-relaxed mb-8'>
                   I'm always interested in new opportunities, whether it's a
                   full-time position, freelance project, or just a chat about
                   technology. Don't hesitate to reach out!
@@ -166,9 +166,9 @@ const Contact = () => {
                         : ''
                     }
                     className={`
-                      flex items-center space-x-4 p-4 rounded-lg bg-primary-800/30 border border-primary-700/30 
-                      transition-all duration-500 hover:bg-primary-800/50 hover:border-accent-500/50 
-                      hover:scale-105 transform hover:shadow-lg hover:shadow-accent-500/10
+                      flex items-center space-x-4 p-4 rounded-lg bg-black border-2 border-white 
+                      transition-all duration-500 hover:bg-black hover:border-accent-500 
+                      hover:scale-105 transform hover:shadow-lg hover:shadow-accent-500/50
                       ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                     `}
                     style={{ transitionDelay: `${index * 150}ms` }}
@@ -177,10 +177,10 @@ const Contact = () => {
                       {method.icon}
                     </div>
                     <div>
-                      <div className='text-gray-100 font-medium'>
+                      <div className='text-white font-medium'>
                         {method.title}
                       </div>
-                      <div className='text-gray-400 text-sm'>
+                      <div className='text-gray-300 text-sm'>
                         {method.value}
                       </div>
                     </div>
@@ -193,7 +193,7 @@ const Contact = () => {
                 <p className='text-accent-500 font-mono text-sm mb-2'>
                   Quick Response
                 </p>
-                <p className='text-gray-300'>
+                <p className='text-white'>
                   I typically respond within 24 hours. For urgent inquiries,
                   feel free to reach out via email directly.
                 </p>
@@ -212,7 +212,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor='name'
-                      className='block text-gray-300 font-medium mb-2'
+                      className='block text-white font-medium mb-2'
                     >
                       Name *
                     </label>
@@ -223,7 +223,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className='w-full px-4 py-3 bg-primary-800/50 border border-primary-700/50 rounded-lg text-gray-100 placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300'
+                      className='w-full px-4 py-3 bg-black border-2 border-white rounded-lg text-white placeholder-gray-400 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300'
                       placeholder='Your name'
                     />
                   </div>
@@ -231,7 +231,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor='email'
-                      className='block text-gray-300 font-medium mb-2'
+                      className='block text-white font-medium mb-2'
                     >
                       Email *
                     </label>
@@ -242,7 +242,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className='w-full px-4 py-3 bg-primary-800/50 border border-primary-700/50 rounded-lg text-gray-100 placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300'
+                      className='w-full px-4 py-3 bg-black border-2 border-white rounded-lg text-white placeholder-gray-400 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300'
                       placeholder='your.email@example.com'
                     />
                   </div>
@@ -251,7 +251,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor='subject'
-                    className='block text-gray-300 font-medium mb-2'
+                    className='block text-white font-medium mb-2'
                   >
                     Subject
                   </label>
@@ -261,7 +261,7 @@ const Contact = () => {
                     name='subject'
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className='w-full px-4 py-3 bg-primary-800/50 border border-primary-700/50 rounded-lg text-gray-100 placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300'
+                    className='w-full px-4 py-3 bg-black border-2 border-white rounded-lg text-white placeholder-gray-400 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300'
                     placeholder='Project inquiry'
                   />
                 </div>
@@ -269,7 +269,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor='message'
-                    className='block text-gray-300 font-medium mb-2'
+                    className='block text-white font-medium mb-2'
                   >
                     Message *
                   </label>
@@ -280,7 +280,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className='w-full px-4 py-3 bg-primary-800/50 border border-primary-700/50 rounded-lg text-gray-100 placeholder-gray-500 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300 resize-vertical'
+                    className='w-full px-4 py-3 bg-black border-2 border-white rounded-lg text-white placeholder-gray-400 focus:border-accent-500 focus:ring-1 focus:ring-accent-500 focus:outline-none transition-colors duration-300 resize-vertical'
                     placeholder='Tell me about your project...'
                   />
                 </div>
